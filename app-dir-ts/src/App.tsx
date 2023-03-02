@@ -6,11 +6,25 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        テスト
+        神様
+        <MakeImage />
         <MakeButton />
       </header>
     </div>
   );
+}
+
+const images: string[] = [
+  "https://birdwatcheryt.github.io/image/kjbt.svg",
+  "https://birdwatcheryt.github.io/image/god.svg"
+];
+
+function MakeImage() {
+  const [index, setIndex] = useState(0);
+  const clickImg = () => {
+    setIndex((index + 1) % images.length);
+  };
+  return <img src={images[index]} onClick={clickImg}></img>;
 }
 
 function MakeButton() {
@@ -18,8 +32,7 @@ function MakeButton() {
   const click = () => {
     setCount(count + 1);
   };
-  return <span className="myButton" onClick={click}>いいねボタン{count}</span>;
-  // return <div className="myButton" onClick={click}>いいねボタン{count}</div>;
+  return <span className="myButton" onClick={click}>いいね {count}</span>;
 }
 
 export default App;
