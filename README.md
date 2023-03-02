@@ -13,9 +13,9 @@
 "homepage": "https://<GitHubアカウント名>.github.io/<GitHubリポジトリ名>/",
   "scripts": {
     // ...
-    "rm": "rm -rf docs",
-    "mv": "mv build docs",
-    "git": "git add . && git commit  && git push origin main",
+    "rm": "rm -rf ../docs",
+    "mv": "mv build ../docs",
+    "git": "git add .. && git commit && git push origin main",
     "deploy": "npm run rm && npm run build && npm run mv && npm run git"
   },
 }
