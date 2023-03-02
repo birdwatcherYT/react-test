@@ -28,3 +28,5 @@
 		- `git config --global core.editor emacs`
 	- `#Please enter the commit message for your changes. ...`
 		- コミットメーセージを一番上に書いて保存して終了
+- settings → Pages → Branch
+	- main/docs
