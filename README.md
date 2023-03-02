@@ -1,9 +1,11 @@
 # react-test
 
+## Reactをgithubでホスティング
 - [node.js](https://nodejs.org/en/) DL and install
-- `npx create-react-app app-dir`
+- jsの場合: `npx create-react-app app-dir`
 	- `cd app-dir`
 	- `npm start`
+- tsの場合: `npx create-react-app --template typescript app-dir-ts`
 
 
 `package.json`
@@ -21,8 +23,6 @@
 }
 ```
 
-
-
 - `npm run deploy`
 	- Please supply the message using either -m or -F option.
 		- `git config --global core.editor emacs`
@@ -30,3 +30,10 @@
 		- コミットメーセージを一番上に書いて保存して終了
 - settings → Pages → Branch
 	- main/docs
+
+
+## typescript
+- [サバイバルTypeScript](https://typescriptbook.jp/)
+
+## React
+- [チュートリアル](https://ja.reactjs.org/tutorial/tutorial.html)
