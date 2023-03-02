@@ -2,10 +2,10 @@
 
 ## Reactをgithubでホスティング
 - [node.js](https://nodejs.org/en/) DL and install
-- jsの場合: `npx create-react-app app-dir`
-	- `cd app-dir`
-	- `npm start`
+- jsの場合: `npx create-react-app app-dir-js`
 - tsの場合: `npx create-react-app --template typescript app-dir-ts`
+	- `cd app-dir-ts`
+	- `npm start`
 
 
 `package.json`
