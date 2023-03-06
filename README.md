@@ -47,7 +47,13 @@
 	- .tsx: 中にXMLタグが書ける
 - `import`の`{ xxx }`: [export か export default かの違いらしい](https://blog.bgbgbg.net/archives/4356)
 	- `{ xxx as yyy }`で任意の名前に変更できる
+- [varは使わない](https://typescriptbook.jp/reference/values-types-variables/vars-problems)
+	- let, constを使う
+- [配列でfor-inはNG](https://typescriptbook.jp/reference/values-types-variables/array/how-to-loop-an-array)
+
 
 ## React
 - [チュートリアル](https://ja.reactjs.org/tutorial/tutorial.html)
 - `const [値, set関数] = useState(初期値);`
+- [material ui](https://v4.mui.com/)
+
