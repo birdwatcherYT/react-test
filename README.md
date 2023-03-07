@@ -56,4 +56,14 @@
 - [チュートリアル](https://ja.reactjs.org/tutorial/tutorial.html)
 - `const [値, set関数] = useState(初期値);`
 - [material ui](https://v4.mui.com/)
+- [React hooksを基礎から理解する](https://qiita.com/seira/items/f063e262b1d57d7e78b4)
+- [CreateReactAppの中身できるだけ消したい。](https://qiita.com/Yuma-Satake/items/8940e4eb5c90e134e945)
+- [propsとstateのイメージをつかむ【はじめてのReact】](https://qiita.com/rio_threehouse/items/7632f5a593cf218b9504)
 
+## TODO
+- 読む: [React hooksを基礎から理解する](https://qiita.com/seira/items/f063e262b1d57d7e78b4)
+- 読む: [propsとstateのイメージをつかむ【はじめてのReact】](https://qiita.com/rio_threehouse/items/7632f5a593cf218b9504)
+- 読む: [propsとは?](https://ja.reactjs.org/docs/components-and-props.html)
+- 読む: [非同期処理](https://typescriptbook.jp/reference/asynchronous)
+	- ジョブを投げて中断してみる
+- グローバル変数の代わりに正しい扱い方調査
