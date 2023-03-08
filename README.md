@@ -65,6 +65,10 @@
 - useState: 状態管理
 	- `const [値, set関数] = useState(初期値);`
 - useRef: getElementByIdの代わりに事前に取得したいタグにつけておける
+- useEffect: レンダリング後の処理
+	- `useEffect(() => { 処理内容; return キャンセル関数; }, [依存する状態]);`
+	- `useEffect(() => { document.addEventListener("keydown", keyDown); return () => document.removeEventListener("keydown", keyDown);}, [status]);`
+	- `useEffect(() => {const timeId = setInterval(update, 10); return () => clearInterval(timeId);}, [status])`
 - useMemo: 再計算しないようにするキャッシュのような機能
 - useCallback: 関数をメモ化する`useCallback(fn, deps)`は`useMemo(() => fn, deps)`と等価
 
