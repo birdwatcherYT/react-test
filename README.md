@@ -68,5 +68,5 @@
 - useMemo: 再計算しないようにするキャッシュのような機能
 - useCallback: 関数をメモ化する`useCallback(fn, deps)`は`useMemo(() => fn, deps)`と等価
 
-- 図の描画はcanvasよりsvgの方がやりやすい(クリックされたオブジェクトを取得できる)
+- 図の描画はcanvasよりsvgの方がやりやすい: クリックされたオブジェクトを取得できる
 	- [svgタグ](https://www.webdesignleaves.com/pr/html/svg_basic.html)

@@ -151,11 +151,15 @@ function MakeButton() {
 }
 
 function MakeGraphics() {
+  const colors = ["black", "white", "red", "blue", "green"];
+  const [colorIndex, setColorIndex] = useState(0);
   return (
     <svg viewBox="0 0 500 500" >
       <circle cx="150" cy="50" r="10" stroke="red" fill="grey" />
       <text x="35" y="35" fill="cyan" stroke="red" strokeWidth="1">Hello World!</text>
-      <rect x="100" y="100" width="100" height="100" stroke="lightgreen" strokeWidth="5" fill="orange" />
+      <rect x="100" y="100" width="100" height="100" stroke="lightgreen" strokeWidth="5" fill={colors[colorIndex]}
+        onClick={() => setColorIndex((colorIndex + 1) % colors.length)}
+      />
       <line x1="250" y1="50" x2="300" y2="200" stroke="white" strokeWidth="5" />
       <polygon points="300,10 350,90 400,10" />
     </svg>
