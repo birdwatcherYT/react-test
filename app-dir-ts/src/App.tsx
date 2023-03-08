@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import React, { useState, useRef } from 'react';
 import './App.css';
 
 function App() {
@@ -12,6 +11,9 @@ function App() {
         <MakeButton />
         draggable table
         <MakeTable />
+        see console
+        <MakeStartEndButton />
+        <MakeTextField />
       </header>
     </div>
   );
@@ -23,6 +25,74 @@ const DATA = [
   [3, "CCC", "c"],
   [4, "DDD", "d"],
 ];
+
+function sleep(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+let canceled = false;
+
+async function heavyFunction() {
+  let sum = 0;
+  for (let i = 0; i < 1e10; ++i) {
+    sum += i;
+    if (i % 1e6 === 0) {
+      console.log(i);
+      await sleep(0);
+      if (canceled)
+        return -1;
+    }
+  }
+  return sum;
+}
+
+function MakeStartEndButton() {
+  const [running, setRunning] = useState(false);
+  // pattern1
+  const startJob1 = async () => {
+    setRunning(true);
+    const ans = await heavyFunction();
+    console.log(ans); // number
+    console.log("finish");
+    canceled = false;
+  };
+  // pattern2
+  const startJob2 = () => {
+    setRunning(true);
+    const ans = heavyFunction();
+    console.log(ans);// promise
+    ans.then(
+      // 終了時の動作を書く
+      async () => {
+        console.log(ans); // promise
+        console.log(await ans); // number
+        console.log("finish");
+        canceled = false;
+      }
+    );
+  };
+  const endJob = () => {
+    canceled = true;
+    setRunning(false);
+  };
+  return (
+    <div>
+      <button onClick={startJob1} disabled={running}>heavy job start1</button>
+      <button onClick={startJob2} disabled={running}>heavy job start2</button>
+      <button onClick={endJob}>stop</button>
+    </div>
+  );
+}
+
+function MakeTextField() {
+  const inputElement = useRef<any>(undefined);
+  return (
+    <div>
+      <input ref={inputElement} defaultValue="aaaaa"></input>
+      <button onClick={() => { console.log(inputElement.current?.value); }}>get</button>
+    </div>
+  );
+}
 
 function MakeTable() {
   const [data, setData] = useState(DATA);
@@ -41,15 +111,17 @@ function MakeTable() {
   };
   return (
     <table>
-      {data.map(
-        (row, index: number) =>
-          <tr draggable={true}
-            onDragStart={() => dragStart(index)}
-            onDragEnter={() => dragEnter(index)}
-          >
-            {row.map(x => <td>{x}</td>)}
-          </tr>
-      )}
+      <tbody>
+        {data.map(
+          (row, i: number) =>
+            <tr key={"row" + i} draggable={true}
+              onDragStart={() => dragStart(i)}
+              onDragEnter={() => dragEnter(i)}
+            >
+              {row.map((x, j) => <td key={i + "_" + j}>{x}</td>)}
+            </tr>
+        )}
+      </tbody>
     </table>
   );
 }

@@ -50,20 +50,21 @@
 - [varは使わない](https://typescriptbook.jp/reference/values-types-variables/vars-problems)
 	- let, constを使う
 - [配列でfor-inはNG](https://typescriptbook.jp/reference/values-types-variables/array/how-to-loop-an-array)
-
+- [非同期処理](https://jsprimer.net/basic/async/)
+- jsはすべてシングルスレッド
+	- 重い処理を投げるとブラウザが固まり操作不能に
+	- 見た目並列にする: 明示的に重い処理の途中にsleepを挟む
+	- 途中でキャンセルしたい: 明示的に重い処理の途中でキャンセルフラグを見る
 
 ## React
 - [チュートリアル](https://ja.reactjs.org/tutorial/tutorial.html)
-- `const [値, set関数] = useState(初期値);`
 - [material ui](https://v4.mui.com/)
 - [React hooksを基礎から理解する](https://qiita.com/seira/items/f063e262b1d57d7e78b4)
-- [CreateReactAppの中身できるだけ消したい。](https://qiita.com/Yuma-Satake/items/8940e4eb5c90e134e945)
-- [propsとstateのイメージをつかむ【はじめてのReact】](https://qiita.com/rio_threehouse/items/7632f5a593cf218b9504)
+- [具体例で理解するuseMemoとuseCallbackの使い方。Reactパフォーマンスチューニング](https://nishinatoshiharu.com/react-hooks-memo-callback/)
 
-## TODO
-- 読む: [React hooksを基礎から理解する](https://qiita.com/seira/items/f063e262b1d57d7e78b4)
-- 読む: [propsとstateのイメージをつかむ【はじめてのReact】](https://qiita.com/rio_threehouse/items/7632f5a593cf218b9504)
-- 読む: [propsとは?](https://ja.reactjs.org/docs/components-and-props.html)
-- 読む: [非同期処理](https://typescriptbook.jp/reference/asynchronous)
-	- ジョブを投げて中断してみる
-- グローバル変数の代わりに正しい扱い方調査
+- useState: 状態管理
+	- `const [値, set関数] = useState(初期値);`
+- useRef: getElementByIdの代わりに事前に取得したいタグにつけておける
+- useMemo: 再計算しないようにするキャッシュのような機能
+- useCallback: 関数をメモ化する`useCallback(fn, deps)`は`useMemo(() => fn, deps)`と等価
+
