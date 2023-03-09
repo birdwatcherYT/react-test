@@ -55,6 +55,7 @@
 	- 重い処理を投げるとブラウザが固まり操作不能に
 	- 見た目並列にする: 明示的に重い処理の途中にsleepを挟む
 	- 途中でキャンセルしたい: 明示的に重い処理の途中でキャンセルフラグを見る
+- [Web Worker](https://qiita.com/suin/items/1537e0b4468705db45ce)
 
 ## React
 - [チュートリアル](https://ja.reactjs.org/tutorial/tutorial.html)
