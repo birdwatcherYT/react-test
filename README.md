@@ -2,9 +2,9 @@
 
 ## Reactをgithubでホスティング
 - [node.js](https://nodejs.org/en/) DL and install
-- jsの場合: `npx create-react-app app-dir-js`
-- tsの場合: `npx create-react-app --template typescript app-dir-ts`
-	- `cd app-dir-ts`
+- jsの場合: `npx create-react-app react-test`
+- tsの場合: `npx create-react-app --template typescript react-test`
+	- `cd react-test`
 	- `npm start`
 
 
@@ -15,9 +15,9 @@
 "homepage": "https://<GitHubアカウント名>.github.io/<GitHubリポジトリ名>/",
   "scripts": {
     // ...
-    "rm": "rm -rf ../docs",
-    "mv": "mv build ../docs",
-    "git": "git add .. && git commit && git push origin main",
+    "rm": "rm -rf ./docs",
+    "mv": "mv build ./docs",
+    "git": "git add . && git commit && git push origin main",
     "deploy": "npm run rm && npm run build && npm run mv && npm run git"
   },
 }
@@ -75,3 +75,5 @@
 
 - 図の描画はcanvasよりsvgの方がやりやすい: クリックされたオブジェクトを取得できる
 	- [svgタグ](https://www.webdesignleaves.com/pr/html/svg_basic.html)
+- MUI
+	- npm install @mui/material @emotion/react @emotion/styled

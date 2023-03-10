@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react';
 import './App.css';
+import IconLabelButtons from './IconLabelButtons';
+import FloatingActionButtons from './FloatingActionButtons';
 
 function App() {
-
   return (
     <div className="App">
       <header className="App-header">
@@ -16,10 +17,15 @@ function App() {
         <MakeTextField />
         svg
         <MakeGraphics />
+        <p>MUI</p>
+        <IconLabelButtons />
+        <FloatingActionButtons />
+        <p></p>
       </header>
     </div>
   );
 }
+
 
 const DATA = [
   [1, "AAA", "a"],
@@ -154,7 +160,7 @@ function MakeGraphics() {
   const colors = ["black", "white", "red", "blue", "green"];
   const [colorIndex, setColorIndex] = useState(0);
   return (
-    <svg viewBox="0 0 500 500" >
+    <svg viewBox="0 0 500 240" >
       <circle cx="150" cy="50" r="10" stroke="red" fill="grey" />
       <text x="35" y="35" fill="cyan" stroke="red" strokeWidth="1">Hello World!</text>
       <rect x="100" y="100" width="100" height="100" stroke="lightgreen" strokeWidth="5" fill={colors[colorIndex]}
